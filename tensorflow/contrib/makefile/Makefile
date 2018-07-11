@@ -433,9 +433,9 @@ $(MARCH_OPTION) \
 		TEGRA_LIBS := \
 -L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib \
 -L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib/stubs \
--L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib64 \
--L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib64/stubs \
--L$(JETPACK)/cuDNN/aarch64/cuda/lib64 \
+-L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib \
+-L$(JETPACK)/cuda/targets/aarch64-linux-androideabi/lib/stubs \
+-L$(JETPACK)/cuDNN/aarch64/cuda/lib \
 -L$(LIBDIR)
 
 		CUDA_LIB_DEPS := $(LIBDIR)libtfcuda.a

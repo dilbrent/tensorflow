@@ -1251,9 +1251,9 @@ g++ -std=c++11 -shared -o cuda_op_kernel.so cuda_op_kernel.cc \
 `cuda_op_kernel.so` produced above can be loaded as usual in Python, using the
 `tf.load_op_library` function.
 
-Note that if your CUDA libraries are not installed in `/usr/local/lib64`,
+Note that if your CUDA libraries are not installed in `/usr/local/lib`,
 you'll need to specify the path explicitly in the second (g++) command above.
-For example, add `-L /usr/local/cuda-8.0/lib64/` if your CUDA is installed in
+For example, add `-L /usr/local/cuda-8.0/lib/` if your CUDA is installed in
 `/usr/local/cuda-8.0`.
 
 >   Note in some linux settings, additional options to `nvcc` compiling step are needed. Add `-D_MWAITXINTRIN_H_INCLUDED` to the `nvcc` command line to avoid errors from `mwaitxintrin.h`.

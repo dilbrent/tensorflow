@@ -101,7 +101,7 @@ on. Currently JIT at the session level, which is what is used for the tutorial,
 only supports GPU.
 
 Before starting the tutorial verify that the LD_LIBRARY environment variable or
-ldconfig contains `$CUDA_ROOT/extras/CUPTI/lib64`, which contains libraries for
+ldconfig contains `$CUDA_ROOT/extras/CUPTI/lib`, which contains libraries for
 the CUDA Profiling Tools Interface [(CUPTI)](http://docs.nvidia.com/cuda/cupti/index.html).
 TensorFlow uses CUPTI to pull tracing information from the GPU.
 

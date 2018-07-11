@@ -869,7 +869,7 @@ def set_tf_cuda_version(environ_cp):
     if is_windows():
       cuda_rt_lib_path = 'lib/x64/cudart.lib'
     elif is_linux():
-      cuda_rt_lib_path = 'lib64/libcudart.so.%s' % tf_cuda_version
+      cuda_rt_lib_path = 'lib/libcudart.so.%s' % tf_cuda_version
     elif is_macos():
       cuda_rt_lib_path = 'lib/libcudart.%s.dylib' % tf_cuda_version
 
@@ -925,7 +925,7 @@ def set_tf_cudnn_version(environ_cp):
       cuda_dnn_lib_path = 'lib/x64/cudnn.lib'
       cuda_dnn_lib_alt_path = 'lib/x64/cudnn.lib'
     elif is_linux():
-      cuda_dnn_lib_path = 'lib64/libcudnn.so.%s' % tf_cudnn_version
+      cuda_dnn_lib_path = 'lib/libcudnn.so.%s' % tf_cudnn_version
       cuda_dnn_lib_alt_path = 'libcudnn.so.%s' % tf_cudnn_version
     elif is_macos():
       cuda_dnn_lib_path = 'lib/libcudnn.%s.dylib' % tf_cudnn_version
@@ -1016,7 +1016,7 @@ def set_tf_tensorrt_install_path(environ_cp):
 
     possible_files = find_libs(trt_install_path)
     possible_files.update(find_libs(os.path.join(trt_install_path, 'lib')))
-    possible_files.update(find_libs(os.path.join(trt_install_path, 'lib64')))
+    possible_files.update(find_libs(os.path.join(trt_install_path, 'lib')))
 
     def is_compatible(tensorrt_lib, cuda_ver, cudnn_ver):
       """Check the compatibility between tensorrt and cudnn/cudart libraries."""
@@ -1075,7 +1075,7 @@ def set_tf_tensorrt_install_path(environ_cp):
             'are not compatible with selected cuda and cudnn installations')
       print(trt_install_path)
       print(os.path.join(trt_install_path, 'lib'))
-      print(os.path.join(trt_install_path, 'lib64'))
+      print(os.path.join(trt_install_path, 'lib'))
       if search_result:
         print(libnvinfer_path_from_ldconfig)
     else:
@@ -1083,7 +1083,7 @@ def set_tf_tensorrt_install_path(environ_cp):
           'Invalid path to TensorRT. None of the following files can be found:')
       print(trt_install_path)
       print(os.path.join(trt_install_path, 'lib'))
-      print(os.path.join(trt_install_path, 'lib64'))
+      print(os.path.join(trt_install_path, 'lib'))
       if search_result:
         print(libnvinfer_path_from_ldconfig)
 

@@ -49,7 +49,7 @@ toolchain {
   # to be fixed, maybe with auto-detection?
   cxx_builtin_include_directory: "/usr/lib/gcc/"
   cxx_builtin_include_directory: "/usr/lib"
-  cxx_builtin_include_directory: "/usr/lib64"
+  cxx_builtin_include_directory: "/usr/lib"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
 
@@ -160,7 +160,7 @@ toolchain {
   # to be fixed, maybe with auto-detection?
   cxx_builtin_include_directory: "/usr/lib/gcc/"
   cxx_builtin_include_directory: "/usr/lib"
-  cxx_builtin_include_directory: "/usr/lib64"
+  cxx_builtin_include_directory: "/usr/lib"
   cxx_builtin_include_directory: "/usr/local/include"
   cxx_builtin_include_directory: "/usr/include"
 

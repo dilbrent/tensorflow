@@ -530,7 +530,7 @@ on your system:
 Add this path to the `LD_LIBRARY_PATH` environmental variable:
 
 <pre class="prettyprint lang-bsh">
-  <code class="devsite-terminal">export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib64</code>
+  <code class="devsite-terminal">export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/usr/local/cuda/extras/CUPTI/lib</code>
 </pre>
 
 * *OPTIONAL*:  For optimized performance during inference, install

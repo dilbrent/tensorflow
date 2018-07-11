@@ -233,8 +233,8 @@ cc_library(
             "-Wl,-rpath,../local_config_cuda/cuda/extras/CUPTI/lib",
         ],
         "//conditions:default": [
-            "-Wl,-rpath,../local_config_cuda/cuda/lib64",
-            "-Wl,-rpath,../local_config_cuda/cuda/extras/CUPTI/lib64",
+            "-Wl,-rpath,../local_config_cuda/cuda/lib",
+            "-Wl,-rpath,../local_config_cuda/cuda/extras/CUPTI/lib",
         ],
     }),
     deps = [

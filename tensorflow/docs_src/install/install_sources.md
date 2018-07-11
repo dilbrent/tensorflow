@@ -147,7 +147,7 @@ The following NVIDIA <i>software</i> must be installed on your system:
     you also need to append its path to the `LD_LIBRARY_PATH` environment
     variable:
 
-    <pre> $ <b>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64</b> </pre>
+    <pre> $ <b>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib</b> </pre>
 
 ### Next
 

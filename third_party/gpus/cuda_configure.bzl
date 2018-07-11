@@ -42,10 +42,10 @@ _DEFAULT_CUDA_COMPUTE_CAPABILITIES = ["3.5", "5.2"]
 #
 # Paths will be tried out in the order listed below. The first successful path
 # will be used. For example, when looking for the cudart libraries, the first
-# attempt will be lib64/cudart inside the CUDA toolkit.
+# attempt will be lib/cudart inside the CUDA toolkit.
 CUDA_LIB_PATHS = [
-  "lib64/",
-  "lib64/stubs/",
+  "lib/",
+  "lib/stubs/",
   "lib/x86_64-linux-gnu/",
   "lib/x64/",
   "lib/",
@@ -66,9 +66,9 @@ CUPTI_HEADER_PATHS = [
 # On most systems, the cupti library is not installed in the same directory as
 # the other CUDA libraries but rather in a special extras/CUPTI directory.
 CUPTI_LIB_PATHS = [
-  "extras/CUPTI/lib64/",
+  "extras/CUPTI/lib/",
   "lib/x86_64-linux-gnu",
-  "lib64/",
+  "lib/",
   "extras/CUPTI/libx64/",
   "extras/CUPTI/lib/",
   "lib/",

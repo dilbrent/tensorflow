@@ -79,7 +79,7 @@ class DsoLoader {
   // Arguments:
   //   library_name: the filename in tree; e.g. libOpenCL.so.1.0.0
   //   runfiles_relpath: where to look for the library relative to the runfiles
-  //      root; e.g. third_party/gpus/cuda/lib64
+  //      root; e.g. third_party/gpus/cuda/lib
   static string FindDsoPath(port::StringPiece library_name,
                             port::StringPiece runfiles_relpath);
 

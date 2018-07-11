@@ -57,7 +57,7 @@ if (NOT WIN32)
   find_package (Threads)
 
   # Options for linking CUDA/CUDNN libraries
-  option(tensorflow_PATH_STATIC_LIB "Additional library search path for libcudnn_static.a, libnccl_static.a, libculibos.a" /usr/local/cuda/lib64/)
+  option(tensorflow_PATH_STATIC_LIB "Additional library search path for libcudnn_static.a, libnccl_static.a, libculibos.a" /usr/local/cuda/lib/)
   option(tensorflow_CUDNN_INCLUDE "cudnn.h header install path" /usr/include/)
   if (NOT tensorflow_CUDNN_INCLUDE)
     # option's default value is OFF. Fill it with real default values
@@ -73,10 +73,10 @@ if (NOT WIN32)
     # option's default value is OFF. Fill it with real default values
     set (tensorflow_PATH_NCCL_STATIC_LIB ${tensorflow_PATH_STATIC_LIB})
   endif (NOT tensorflow_PATH_NCCL_STATIC_LIB)
-  option(tensorflow_CUDA_LIBRARY_PATH "Designate the default CUDA library paths" /usr/local/cuda/lib64)
+  option(tensorflow_CUDA_LIBRARY_PATH "Designate the default CUDA library paths" /usr/local/cuda/lib)
   if (NOT tensorflow_CUDA_LIBRARY_PATH)
     # option's default value is OFF. Fill it with real default values
-    set(tensorflow_CUDA_LIBRARY_PATH /usr/local/cuda/lib64)
+    set(tensorflow_CUDA_LIBRARY_PATH /usr/local/cuda/lib)
   endif (NOT tensorflow_CUDA_LIBRARY_PATH)
 
   # Options for linking other libraries
@@ -422,7 +422,7 @@ if (tensorflow_ENABLE_GPU)
       message(FATAL_ERROR "NCCL is required for GPU-build")
     else (NOT nccl_STATIC_LIBRARY)
       message("nccl-static: ${nccl_STATIC_LIBRARY}")
-      # something like /usr/lib64/libnccl_static.a
+      # something like /usr/lib/libnccl_static.a
     endif (NOT nccl_STATIC_LIBRARY)
 
     find_library(cudnn_STATIC_LIBRARY NAMES libcudnn_static.a PATHS ${tensorflow_PATH_CUDNN_STATIC_LIB} ${CUDA_TOOLKIT_ROOT_DIR})
