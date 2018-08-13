@@ -163,7 +163,7 @@ There are two ways to run TensorFlow unit tests.
    the `cuda` option flag
 
    ```bash
-   export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH"
+   export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib:$LD_LIBRARY_PATH"
 
    export flags="--config=opt --config=cuda -k"
    ```

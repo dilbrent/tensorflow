@@ -129,7 +129,7 @@ The following NVIDIA® <i>software</i> must be installed on your system:
 *   [CUPTI](http://docs.nvidia.com/cuda/cupti/) ships with the CUDA Toolkit, but
     you also need to append its path to the `LD_LIBRARY_PATH` environment
     variable: `export
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64`
+    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib`
 *   *OPTIONAL*: [NCCL 2.2](https://developer.nvidia.com/nccl) to use TensorFlow
     with multiple GPUs.
 *   *OPTIONAL*:

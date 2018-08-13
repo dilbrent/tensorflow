@@ -82,7 +82,7 @@ WORKDIR /tensorflow
 
 # Configure the build for our CUDA configuration.
 ENV CI_BUILD_PYTHON=python \
-    LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:${LD_LIBRARY_PATH} \
+    LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib:${LD_LIBRARY_PATH} \
     CUDNN_INSTALL_PATH=/usr/lib/x86_64-linux-gnu \
     PYTHON_BIN_PATH=/usr/bin/python \
     PYTHON_LIB_PATH=/usr/local/lib/python2.7/dist-packages \
@@ -93,8 +93,8 @@ ENV CI_BUILD_PYTHON=python \
 RUN ./configure
 
 # Build and Install TensorFlow.
-RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 && \
-    LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs:${LD_LIBRARY_PATH} \
+RUN ln -s /usr/local/cuda/lib/stubs/libcuda.so /usr/local/cuda/lib/stubs/libcuda.so.1 && \
+    LD_LIBRARY_PATH=/usr/local/cuda/lib/stubs:${LD_LIBRARY_PATH} \
     bazel build -c opt \
                 --config=cuda \
                 --cxxopt="-D_GLIBCXX_USE_CXX11_ABI=0" \

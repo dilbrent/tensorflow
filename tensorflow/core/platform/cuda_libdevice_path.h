@@ -21,7 +21,7 @@ limitations under the License.
 namespace tensorflow {
 
 // Returns the root directory of the CUDA SDK, which contains sub-folders such
-// as bin, lib64, and nvvm.
+// as bin, lib, and nvvm.
 string CudaRoot();
 
 // Returns the directory that contains nvvm libdevice files in the CUDA SDK.

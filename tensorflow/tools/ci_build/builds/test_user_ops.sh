@@ -187,13 +187,13 @@ else
       ${TF_CFLAGS[@]} -D GOOGLE_CUDA=1 -x cu -Xcompiler -fPIC || \
       die "nvcc compilation of ${OP_KERNEL_CC} FAILED"
 
-  CUDA_LIB_DIR="/usr/local/cuda/lib64"
+  CUDA_LIB_DIR="/usr/local/cuda/lib"
   if [[ ! -d "${CUDA_LIB_DIR}" ]]; then
     CUDA_LIB_DIR="/usr/local/cuda/lib"
   fi
   if [[ ! -d "${CUDA_LIB_DIR}" ]]; then
     die "ERROR: Failed to find CUDA library directory at either of "
-"/usr/local/cuda/lib and /usr/local/cuda/lib64"
+"/usr/local/cuda/lib and /usr/local/cuda/lib"
   fi
 
   echo "Found CUDA library diretory at: ${CUDA_LIB_DIR}"

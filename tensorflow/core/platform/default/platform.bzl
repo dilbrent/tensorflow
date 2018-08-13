@@ -18,15 +18,15 @@ def cuda_library_path(name, version = cuda_sdk_version()):
       return "lib/lib{}.{}.dylib".format(name, version)
   else:
     if not version:
-      return "lib64/lib{}.so".format(name)
+      return "lib/lib{}.so".format(name)
     else:
-      return "lib64/lib{}.so.{}".format(name, version)
+      return "lib/lib{}.so.{}".format(name, version)
 
 def cuda_static_library_path(name):
   if PLATFORM == "Darwin":
     return "lib/lib{}_static.a".format(name)
   else:
-    return "lib64/lib{}_static.a".format(name)
+    return "lib/lib{}_static.a".format(name)
 
 def cudnn_library_path(version = cudnn_sdk_version()):
   if PLATFORM == "Darwin":
@@ -36,9 +36,9 @@ def cudnn_library_path(version = cudnn_sdk_version()):
       return "lib/libcudnn.{}.dylib".format(version)
   else:
     if not version:
-      return "lib64/libcudnn.so"
+      return "lib/libcudnn.so"
     else:
-      return "lib64/libcudnn.so.{}".format(version)
+      return "lib/libcudnn.so.{}".format(version)
 
 def cupti_library_path(version = cuda_sdk_version()):
   if PLATFORM == "Darwin":
@@ -48,9 +48,9 @@ def cupti_library_path(version = cuda_sdk_version()):
       return "extras/CUPTI/lib/libcupti.{}.dylib".format(version)
   else:
     if not version:
-      return "extras/CUPTI/lib64/libcupti.so"
+      return "extras/CUPTI/lib/libcupti.so"
     else:
-      return "extras/CUPTI/lib64/libcupti.so.{}".format(version)
+      return "extras/CUPTI/lib/libcupti.so.{}".format(version)
 
 def readlink_command():
   if PLATFORM == "Darwin":

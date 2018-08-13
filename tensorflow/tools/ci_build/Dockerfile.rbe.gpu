@@ -5,7 +5,7 @@ LABEL maintainer="Nick Lopez <ngiraldo@google.com>"
 # In the Ubuntu 16.04 images, cudnn is placed in system paths. Move them to
 # /usr/local/cuda
 RUN cp -P /usr/include/cudnn.h /usr/local/cuda/include
-RUN cp -P /usr/lib/x86_64-linux-gnu/libcudnn* /usr/local/cuda/lib64
+RUN cp -P /usr/lib/x86_64-linux-gnu/libcudnn* /usr/local/cuda/lib
 
 # Copy and run the install scripts.
 COPY install/*.sh /install/

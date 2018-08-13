@@ -142,7 +142,7 @@ First, download and install JetPack for Android version 3.2 or greater from [Nvi
 git clone https://github.com/tensorflow/tensorflow.git
 cd tensorflow
 JETPACK=$HOME/JetPack_Android_3.2
-TEGRA_LIBS="$JETPACK/cuDNN/aarch64/cuda/lib64/libcudnn.so  $JETPACK/cuda-9.0/extras/CUPTI/lib64/libcupti.so $JETPACK/cuda/targets/aarch64-linux-androideabi/lib64/libcufft.so"
+TEGRA_LIBS="$JETPACK/cuDNN/aarch64/cuda/lib/libcudnn.so  $JETPACK/cuda-9.0/extras/CUPTI/lib/libcupti.so $JETPACK/cuda/targets/aarch64-linux-androideabi/lib/libcufft.so"
 ```
 
 #### Building all CUDA-enabled native binaries:
@@ -159,13 +159,13 @@ CC_PREFIX=ccache tensorflow/contrib/makefile/build_all_android.sh -s tensorflow/
 Build binaries first as above, then run:
 
 ```bash
-adb shell mkdir -p /data/local/tmp/lib64
-adb push $TEGRA_LIBS /data/local/tmp/lib64
+adb shell mkdir -p /data/local/tmp/lib
+adb push $TEGRA_LIBS /data/local/tmp/lib
 adb push tensorflow/contrib/makefile/gen/bin/android_arm64-v8a/benchmark /data/local/tmp
 wget  https://ci.tensorflow.org/view/Nightly/job/nightly-android/lastSuccessfulBuild/artifact/out/tensorflow_demo.apk
 unzip tensorflow_demo.apk -d /tmp/tensorflow_demo
 adb push /tmp/tensorflow_demo/assets/*.pb /data/local/tmp
-adb shell "LD_LIBRARY_PATH=/data/local/tmp/lib64 /data/local/tmp/benchmark --graph=/data/local/tmp/tensorflow_inception_graph.pb"
+adb shell "LD_LIBRARY_PATH=/data/local/tmp/lib /data/local/tmp/benchmark --graph=/data/local/tmp/tensorflow_inception_graph.pb"
 ```
 
 #### Building the CUDA-enabled TensorFlow AAR with Bazel:
